@@ -1,6 +1,6 @@
 # Testing
 
-This document records how the project was tested against the checkpoint rubric.
+This file shows how the project was tested against the checkpoint rubric.
 
 ## Test environment
 
@@ -123,8 +123,7 @@ I searched the project source and checked that JavaScript functions are either
 used by the browser entry point or exported for use by the tests. I also
 checked the CSS selectors against the HTML and dynamically created elements.
 
-During this review, an unused JavaScript heading helper and an unused
-`article` CSS selector were removed. The remaining styles apply to elements in
+The styles apply to elements in
 [`index.html`](./index.html) or sections created by
 [`script.mjs`](./script.mjs).
 
@@ -139,9 +138,3 @@ basics manually:
 - results use semantic headings and lists;
 - result updates use `aria-live="polite"`; and
 - keyboard-focus styling is defined for the select control.
-
-To reproduce the Lighthouse check, open the page in Chrome, open DevTools,
-select the **Lighthouse** panel, choose **Desktop**, select **Accessibility**
-only, and click **Analyze page load**. Repeat the check after selecting each
-user so that all rendered views are covered. The required result for this
-rubric point is **100% Accessibility** for every view.

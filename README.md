@@ -20,7 +20,7 @@ so no external database or API is required.
 ## Requirements
 
 - Node.js and npm, for running the test suite
-- Python 3, or another local static HTTP server, for running the browser app
+- Static HTTP server, for running the browser app
 
 ## Running the application
 
@@ -68,15 +68,15 @@ npm test
 
 ## Project structure
 
-| File | Purpose |
-| --- | --- |
-| [`index.html`](./index.html) | HTML page and application entry point |
-| [`script.mjs`](./script.mjs) | Populates the user selector and renders results |
-| [`data.mjs`](./data.mjs) | Provides sample users, songs, and listening events |
-| [`musicStats.mjs`](./musicStats.mjs) | Calculates listening statistics |
-| [`musicStats.test.mjs`](./musicStats.test.mjs) | Vitest tests for the statistics logic |
-| [`common.mjs`](./common.mjs) | Shared helper functions |
-| [`styles.css`](./styles.css) | Application layout and visual styles |
+| File                                           | Purpose                                            |
+| ---------------------------------------------- | -------------------------------------------------- |
+| [`index.html`](./index.html)                   | HTML page and application entry point              |
+| [`script.mjs`](./script.mjs)                   | Populates the user selector and renders results    |
+| [`data.mjs`](./data.mjs)                       | Provides sample users, songs, and listening events |
+| [`musicStats.mjs`](./musicStats.mjs)           | Calculates listening statistics                    |
+| [`musicStats.test.mjs`](./musicStats.test.mjs) | Vitest tests for the statistics logic              |
+| [`common.mjs`](./common.mjs)                   | Shared helper functions                            |
+| [`styles.css`](./styles.css)                   | Application layout and visual styles               |
 
 ## Data flow
 
