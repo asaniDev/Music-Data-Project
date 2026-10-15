@@ -16,12 +16,6 @@ import {
 const userSelect = document.querySelector("#user-select");
 const results = document.querySelector("#results");
 
-function addHeading(text) {
-  const heading = document.createElement("h2");
-  heading.textContent = text;
-  results.append(heading);
-}
-
 function addList(title, items, formatItem) {
   // Hide the entire question if no result applies.
   if (items.length === 0) {
@@ -57,6 +51,10 @@ function populateUsers() {
 
 function renderUser(userID) {
   results.replaceChildren();
+
+  if (userID === "") {
+    return;
+  }
 
   const tracks = getUserTracks(userID);
 
