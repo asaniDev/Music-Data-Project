@@ -2,6 +2,12 @@ import { beforeEach, describe, expect, test, vi } from "vitest";
 
 import { getSong, getListenEvents } from "./data.mjs";
 
+import {
+  getUserTracks,
+  getMostPlayedArtists,
+  getMostPlayedSongs,
+} from "./musicStats.mjs";
+
 vi.mock("./data.mjs", () => ({
   getSong: vi.fn(),
   getListenEvents: vi.fn(),
@@ -45,4 +51,27 @@ beforeEach(() => {
   getSong.mockImplementation((songID) => songs[songID]);
 
   getListenEvents.mockReturnValue([]);
+});
+
+describe("getUserTracks", () => {
+  test("attaches song details to each event", () => {
+    getListenEvents.mockReturnValue([
+      event("song-1", "2024-08-01T10:00:00", 36000),
+    ]);
+
+    expect(getUserTracks("1")).toEqual([
+      {
+        ...event("song-1", "2024-08-01T10:00:00", 36000),
+        song: songs["song-1"],
+      },
+    ]);
+  });
+
+  test("skips events whose song details are missing", () => {
+    getListenEvents.mockReturnValue([
+      event("song-missing", "2024-08-01T10:00:00", 36000),
+    ]);
+
+    expect(getUserTracks("1")).toEqual([]);
+  });
 });
