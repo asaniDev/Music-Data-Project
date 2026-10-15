@@ -1,0 +1,11 @@
+{
+  "name": "project-music-data",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^5.0.5"
+  }
+}
