@@ -37,7 +37,6 @@ select:focus-visible {
   outline-offset: 3px;
 }
 
-article,
 #results > section {
   margin-top: 1.25rem;
   padding: 1rem;
