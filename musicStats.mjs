@@ -99,7 +99,6 @@ export function getMostPlayedArtists(userID) {
 }
 
 // Interpret the timestamp as the project's local date and time.
-// This assumes the timestamps are local ISO strings without a timezone.
 function getLocalDayOfWeek(timestamp) {
   return new Date(timestamp).getDay();
 }
